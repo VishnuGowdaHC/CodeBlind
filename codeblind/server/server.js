@@ -26,19 +26,5 @@ setupSockets(io);
 
 connectDB();
 
-app.get("/api/problems", async (req, res) => {
-    try {
-        const data = await Problem.findOne({id: "food_delivery"})
-        console.log(data.pieces);
-        res.json(data);
-        
-    } catch (error) {
-        console.error(error.message);
-        res.status(500).send("Server Error");
-    }
-    
-})
-
-
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

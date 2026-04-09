@@ -30,7 +30,7 @@ const Code = ({myPiece, handleSubmit, handleValidate, validationResult, isValida
   };
 
   return (
-    <div className="h-screen w-full bg-[#050505] text-neutral-300 font-sans flex flex-col overflow-hidden selection:bg-purple-500/30">
+    <div className="h-screen w-full font-mono bg-[#050505] text-neutral-300 font-sans flex flex-col overflow-hidden selection:bg-purple-500/30">
       
       {/* --- TOP NAVIGATION BAR --- */}
       <NavBar/>

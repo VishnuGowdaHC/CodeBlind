@@ -1,4 +1,3 @@
-// src/sockets/gameHandlers.js
 import { activeRooms } from './state.js';
 import Problem from '../models/problem.js'; 
 import { gradePlayerCode, verify } from '../services/llm.js';
@@ -22,7 +21,6 @@ export const handleGameLogic = (io, socket) => {
             room.problemId = problem.id;
             room.fullProblem = problem; 
 
-            // 2. Deal exact pieces to players
             const pieces = problem.pieces;
             room.players.forEach((player, index) => {
                 const assignedPiece = pieces[index % pieces.length];
@@ -30,10 +28,10 @@ export const handleGameLogic = (io, socket) => {
                 player.submittedCode = null; // Reset code
                 player.isFinished = false;   // Reset status
 
-                // PRIVATE MESSAGE: Send only to this specific player
+                // PRIVATE MESSAGE
                 io.to(player.id).emit('game_started', assignedPiece);
             });
-            console.log(`🚀 Game started in room ${cleanRoomCode}!`);
+            console.log(`Game started in room ${cleanRoomCode}!`);
         } catch (error) {
             console.error(error);
         }

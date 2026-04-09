@@ -45,6 +45,7 @@ export default function GameManager() {
             setMyPiece(assignedPiece);
             setView('Code');
         })
+        
         socketRef.current.on('validate_result', (result) => {
             setIsValidating(false);
             console.log(result);

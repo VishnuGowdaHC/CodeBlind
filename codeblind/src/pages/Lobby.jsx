@@ -5,7 +5,7 @@ const Lobby = ({players, isHost, handleStart, handleLeave, selected, roomCode}) 
   // Mock data to iterate over for players
  
   return (
-    <div className="min-h-screen bg-[#0d0d0f] text-white font-sans flex flex-col selection:bg-purple-500/30">
+    <div className="min-h-screen font-mono bg-[#0d0d0f] text-white font-sans flex flex-col selection:bg-purple-500/30">
       
       {/* --- TOP NAVIGATION --- */}
       <NavBar/>

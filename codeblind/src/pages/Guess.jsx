@@ -48,7 +48,7 @@ const Guess = ({discussionData, roomCode, socketRef, myPiece}) => {
         setHasGuessed(true);
     }
     return (
-        <div className="h-screen w-full bg-[#0d0d0f] text-neutral-300 font-sans flex flex-col overflow-hidden selection:bg-[#a855f7]/30">
+        <div className="h-screen w-full font-mono bg-[#0d0d0f] text-neutral-300  flex flex-col overflow-hidden selection:bg-[#a855f7]/30">
             
             {/* --- HEADER --- */}
             <NavBar/>
