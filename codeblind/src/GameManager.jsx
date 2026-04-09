@@ -24,10 +24,13 @@ export default function GameManager() {
     const [isValidating, setIsValidating] = useState(false);
     const [discussionData, setDiscussionData] = useState([]);
     const [aiData, setAIData] = useState(null);
+
     const socketRef = useRef();
 
+    const URL = 'https://codeblind-z8ay.onrender.com' || 'http://localhost:5500';
+
     useEffect(()=>{
-        socketRef.current = io("http://localhost:5500");
+        socketRef.current = io(URL, {transports: ['websocket']});
 
         socketRef.current.on('player_joined', (updatedPlayers) => {
             setPlayers(updatedPlayers);
