@@ -36,15 +36,15 @@ const Code = ({myPiece, handleSubmit, handleValidate, validationResult, isValida
       <NavBar/>
 
       {/* --- MAIN LAYOUT (SPLIT PANES) --- */}
-      <main className="flex-1 flex overflow-hidden">
+      <main className="flex-1 flex flex-col md:flex-row overflow-hidden">
         
         {/* LEFT PANE: PROBLEM SPEC */}
-        <aside className="w-[450px] min-w-[300px] bg-[#161618] border-r border-neutral-800 flex flex-col">
+        <aside className="w-[450px] min-w-[300px] bg-[#161618] border-r border-neutral-800 flex flex-col max-h-[50vh] md:max-h-full">
           
           <div className="flex-1 overflow-y-auto p-8 relative">
             
 
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-1 h-4 bg-[#a855f7]"></div>
                 <h2 className="text-xs font-mono font-bold tracking-[0.2em] text-white ">{myPiece.functionName}</h2>
@@ -54,7 +54,7 @@ const Code = ({myPiece, handleSubmit, handleValidate, validationResult, isValida
               </p>
             </div>
 
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-1 h-4 bg-[#a855f7]"></div>
                 <h2 className="text-xs font-mono font-bold tracking-[0.2em] text-white ">Constraints</h2>
@@ -90,7 +90,7 @@ const Code = ({myPiece, handleSubmit, handleValidate, validationResult, isValida
         </aside>
 
         {/* RIGHT PANE: REAL CODE EDITOR */}
-        <section className="flex-1 flex flex-col bg-[#050505]">
+        <section className="flex-1 flex flex-col bg-[#050505] min-h-[50vh] md:min-h-0">
           
           <div className="flex justify-between items-center bg-[#0d0d0f] border-b border-neutral-800 pl-2 pr-6">
             <div className="flex">
