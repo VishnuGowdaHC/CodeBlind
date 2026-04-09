@@ -15,8 +15,11 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.1",
     "express": "^5.2.1",
+    "groq-sdk": "^1.1.2",
     "mongoose": "^9.4.1",
     "nodemon": "^3.1.14",
+    "prismjs": "^1.30.0",
+    "react-simple-code-editor": "^0.14.1",
     "socket.io": "^4.8.3"
   }
 }

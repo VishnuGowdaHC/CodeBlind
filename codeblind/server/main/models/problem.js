@@ -11,6 +11,7 @@ const pieceSchema = new mongoose.Schema({
 const problemSchema = new mongoose.Schema({
     id: {type: String, unique: true, required: true},
     hiddenGoal: {type: String, required: true},
+    length: {type: Number, required: true},
     pieces: [pieceSchema]
 })
 

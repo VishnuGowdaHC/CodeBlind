@@ -5,18 +5,9 @@ import { Link } from 'react-router-dom';
 
 
 
-const Home = ({handleJoin, joinName, setJoinName, handleCreate, creatName, setCreateName, roomCode, setRoomCode}) => {
-
-    const generateCode = (length = 4) => {
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let result = '';
-        for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * letters.length);
-        result += letters[randomIndex];
-        }
-        setRoomCode(result);
-        console.log("Generated code:", result); // <-- logs the code
-    }
+const Home = ({handleJoin, joinName, setJoinName, handleCreate, creatName, setCreateName, roomCode, setRoomCode, handleLength, selected}) => {
+    
+    const options = [2, 3, 4];
 
   return (
     <div className="w-full font-mono bg-[#0d0d0f] text-white  flex flex-col justify-between selection:bg-purple-500/30">
@@ -90,6 +81,24 @@ const Home = ({handleJoin, joinName, setJoinName, handleCreate, creatName, setCr
             <div className="flex items-center gap-3 mb-8">
               <div className="w-2 h-6 bg-[#22c55e]"></div>
               <h2 className="text-2xl font-bold tracking-wide text-white">CREATE GAME</h2>
+              <div className="flex items-center bg-[#3f3f42] rounded-xl p-1 ml-[auto] scale-75 w-fit border border-[#8a8a8a] shadow-inner">
+            {options.map((option) => (
+                <button
+                key={option}
+                onClick={() => handleLength(option)}
+                className={`
+                    px-2 py-1 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out tracking-wide   
+                    ${
+                    selected === option
+                        ? 'bg-[#18181a] text-[#6ef598] shadow-sm'
+                        : 'text-[#d4d4d4] hover:text-white bg-transparent'
+                    }
+                `}
+                >
+                {option}P
+                </button>
+            ))}
+            </div>
             </div>
 
             <div className="space-y-6 flex-grow flex flex-col">
@@ -119,18 +128,6 @@ const Home = ({handleJoin, joinName, setJoinName, handleCreate, creatName, setCr
 
         </div>
       </main>
-
-      {/* --- FOOTER --- */}
-      <footer className="flex flex-col md:flex-row justify-between items-center p-6 md:p-8 text-[10px] font-mono text-neutral-500 gap-4">
-        <div className="flex items-center gap-2">
-          <span className="tracking-[0.15em] uppercase text-neutral-600">System Status:</span>
-          <span className="text-[#22c55e] tracking-[0.15em] font-semibold">OPERATIONAL</span>
-        </div>
-        <div className="flex gap-8 tracking-[0.15em]">
-          <a href="#" className="hover:text-white transition-colors duration-300">DOCUMENTATION</a>
-          <a href="#" className="hover:text-white transition-colors duration-300">BUG BOUNTY</a>
-        </div>
-      </footer>
       
     </div>
   );

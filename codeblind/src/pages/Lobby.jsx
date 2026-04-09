@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 
-const Lobby = ({players, isHost, handleLeave, handleStart, roomCode}) => {
+const Lobby = ({players, isHost, handleStart, handleLeave, selected, roomCode}) => {
   // Mock data to iterate over for players
  
   return (
@@ -66,21 +66,22 @@ const Lobby = ({players, isHost, handleLeave, handleStart, roomCode}) => {
           </div>
 
           {/* Sync Header */}
-          <div className="flex justify-between items-end border-b border-neutral-800/80 pb-6 mb-6">
+          <div className="flex justify-between items-start border-b border-neutral-800/80 pb-6 mb-6">
             <div>
-              <p className="text-[10px] font-mono text-neutral-500 tracking-widest mb-1 uppercase">System_Sync:</p>
-              <h2 className="text-xl font-bold tracking-wide">{players.length}/4</h2>
+              <p className="text-[10px] font-mono text-neutral-500 tracking-widest mb-1 uppercase">Active_Players:</p>
+              <h2 className="text-xl font-bold tracking-wide">{players.length}/{selected}</h2>
             </div>
             <div>
-            <button className="w-full mt-6 bg-[#fa2f4e] hover:bg-[#a14255] text-white  transition-colors rounded-md font-mono text-[11px] font-bold tracking-[0.25em] px-3 py-1 uppercase" onClick={() => handleLeave()}>
-              EXIT
-            </button>
-            <div></div>
+               
+                <button className="w-full mt-2 bg-[#fa2f4e] hover:bg-[#a14255] text-white  transition-colors rounded-md font-mono text-[11px] font-bold tracking-[0.25em] px-3 py-2 uppercase" onClick={() => handleLeave()}>
+                EXIT
+                </button>
             </div>
           </div>
 
           {/* Action Button */}
-          <button className={`w-full mt-6 bg-[#1a1a1d] hover:bg-[#1f1f23] text-neutral-500 border border-neutral-800 transition-colors py-4 rounded-md font-mono text-[11px] font-bold tracking-[0.25em] uppercase ${isHost ? 'bg-[#22c55e] hover:bg-[#22c55e]/80 text-white' : 'cursor-not-allowed '} `}>
+          <button className={`w-full mt-6 bg-[#1a1a1d] hover:bg-[#1f1f23] text-neutral-500 border border-neutral-800 transition-colors py-4 rounded-md font-mono text-[11px] font-bold tracking-[0.25em] uppercase ${isHost ? 'bg-[#22c55e] hover:bg-[#22c55e]/80 text-white' : 'cursor-not-allowed '} `}
+            onClick={handleStart}>
             {isHost ? 'START' : 'WAITING FOR HOST'}
           </button>
         </div>
