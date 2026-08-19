@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\codeblind",
+    "\\codeblind\\server",
+    "\\codeblind\\server\\main",
+    "\\codeblind\\server\\main\\sockets"
+  ],
+  "SelectedNode": "\\codeblind\\server\\main\\sockets\\socketManager.js",
+  "PreviewInSolutionExplorer": false
+}

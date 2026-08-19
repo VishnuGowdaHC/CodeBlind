@@ -2,7 +2,6 @@ import 'dotenv/config'
 import express from "express";
 import connectDB from "./main/config/db.js";
 import cors from "cors";
-import Problem from './main/models/problem.js';
 import http from 'http';
 import { Server } from 'socket.io';
 import { setupSockets } from './main/sockets/socketManager.js';

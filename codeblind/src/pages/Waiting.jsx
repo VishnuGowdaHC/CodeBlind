@@ -11,10 +11,6 @@ const Waiting = ({discussionData}) => {
         {/* Ambient background glow behind text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-purple-900/10 blur-[100px] pointer-events-none rounded-full"></div>
 
-        {/* Subtitle */}
-        <div className="text-[10px] font-mono text-[#8b5cf6] tracking-[0.35em] uppercase mb-4 opacity-80">
-          Session ID: {discussionData.id}
-        </div>
 
         {/* Glowing Title */}
         <h1 

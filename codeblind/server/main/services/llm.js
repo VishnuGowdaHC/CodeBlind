@@ -55,7 +55,7 @@ export const gradePlayerCode = async (playerCode, pieceData, fullProblem) => {
 
 export const verify = async ({finalData}) => {
     if (!finalData || !finalData.actualSystem) {
-        console.error("🚨 EMERGENCY: finalData was empty when it reached llm.js!");
+        console.error("EMERGENCY: finalData was empty when it reached llm.js!");
         return { matched: false, confidence: 0, feedback: "Server data error." };
     }
     const promptForAI = `
