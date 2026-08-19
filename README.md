@@ -110,7 +110,7 @@ This trains **architectural reasoning, function design, and collaborative debugg
 
 ---
 
-> **Note:** The client connects to `[https://codeblind-z8ay.onrender.com](https://codeblind-z8ay.onrender.com)` by default. To point at your local server, update the `URL` constant in `src/GameManager.jsx`.
+> **Note:** The client connects to `https://codeblind-1.onrender.com/` by default. To point at your local server, update the `URL` constant in `src/GameManager.jsx`.
 
 ---
 
@@ -151,5 +151,4 @@ codeblind/
 
 ## Live Demo
 
-- **Frontend:** [https://codeblind.onrender.com](https://codeblind.onrender.com) *(may take ~30s to wake from Render cold start)*
-- **Backend:** [https://codeblind-z8ay.onrender.com](https://codeblind-z8ay.onrender.com)
+- **website:** [https://codeblind-1.onrender.com/] *(may take ~30s to wake from Render cold start)*
